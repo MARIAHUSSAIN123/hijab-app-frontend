@@ -1,0 +1,128 @@
+/* src/styles/hijabDetail.css */
+
+/* 📌 Container */
+.hijab-detail-container {
+  max-width: 250px;
+  margin: 50px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 📌 Main Image */
+.detail-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.detail-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* 📌 Rating */
+.rating {
+  margin-bottom: 25px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+/* ⭐ Stars */
+.stars {
+  color: #f1c40f;
+  font-size: 1.4rem;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.stars:hover {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* 📌 Reviews List */
+.reviews-list {
+  margin-top: 25px;
+}
+
+/* 📝 Review Cards */
+.review-card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 18px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, #845ef7, #ff6b6b);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.review-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.review-card:hover p {
+  color: #fff;
+}
+
+/* ✨ Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .detail-image {
+    max-height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-image {
+    max-height: 250px;
+  }
+
+  .rating {
+    font-size: 1.1rem;
+  }
+
+  .stars {
+    font-size: 1.2rem;
+  }
+
+  .review-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .detail-image {
+    max-height: 200px;
+    border-radius: 10px;
+  }
+}

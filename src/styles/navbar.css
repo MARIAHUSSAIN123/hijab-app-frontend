@@ -1,0 +1,118 @@
+/* src/styles/navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #ff6b6b, #845ef7); /* 🔥 warm pink → purple gradient */
+  padding: 14px 28px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-left .logo {
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-left .logo:hover {
+  transform: scale(1.07);
+  color: #ffe066; /* golden glow */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right a {
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-right a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ffe066; /* golden underline */
+  transition: width 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #ffe066;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.user-email {
+  margin-left: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #f8f9fa;
+}
+
+.logout-btn {
+  margin-left: 20px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #f06595, #cc5de8);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #e03177, #9c36b5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav-right {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-right a,
+  .logout-btn,
+  .user-email {
+    margin: 8px 0;
+  }
+
+  .logout-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
